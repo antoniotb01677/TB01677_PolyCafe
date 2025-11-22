@@ -51,13 +51,14 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(335, 28);
+            label1.BackColor = SystemColors.Control;
+            label1.ForeColor = SystemColors.ActiveCaptionText;
+            label1.Location = new Point(622, 9);
             label1.Name = "label1";
             label1.Size = new Size(85, 20);
             label1.TabIndex = 0;
             label1.Text = "Đăng Nhập";
-            
-
+            label1.Click += label1_Click;
             // 
             // guna2ContextMenuStrip1
             // 
@@ -85,7 +86,7 @@
             txtTaiKhoan.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTaiKhoan.Font = new Font("Segoe UI", 9F);
             txtTaiKhoan.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTaiKhoan.Location = new Point(487, 108);
+            txtTaiKhoan.Location = new Point(517, 75);
             txtTaiKhoan.Margin = new Padding(3, 4, 3, 4);
             txtTaiKhoan.Name = "txtTaiKhoan";
             txtTaiKhoan.PasswordChar = '\0';
@@ -98,7 +99,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(487, 60);
+            label2.Location = new Point(517, 38);
             label2.Name = "label2";
             label2.Size = new Size(97, 20);
             label2.TabIndex = 3;
@@ -107,7 +108,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(487, 175);
+            label3.Location = new Point(518, 139);
             label3.Name = "label3";
             label3.Size = new Size(70, 20);
             label3.TabIndex = 4;
@@ -124,7 +125,7 @@
             txtMatKhau.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtMatKhau.Font = new Font("Segoe UI", 9F);
             txtMatKhau.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtMatKhau.Location = new Point(487, 222);
+            txtMatKhau.Location = new Point(518, 178);
             txtMatKhau.Margin = new Padding(3, 4, 3, 4);
             txtMatKhau.Name = "txtMatKhau";
             txtMatKhau.PasswordChar = '\0';
@@ -144,7 +145,7 @@
             btnDangNhap.FillColor = Color.FromArgb(128, 64, 0);
             btnDangNhap.Font = new Font("Segoe UI", 9F);
             btnDangNhap.ForeColor = Color.White;
-            btnDangNhap.Location = new Point(487, 327);
+            btnDangNhap.Location = new Point(523, 275);
             btnDangNhap.Name = "btnDangNhap";
             btnDangNhap.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnDangNhap.Size = new Size(128, 56);
@@ -162,7 +163,7 @@
             btnThoat.FillColor = Color.FromArgb(255, 192, 128);
             btnThoat.Font = new Font("Segoe UI", 9F);
             btnThoat.ForeColor = Color.White;
-            btnThoat.Location = new Point(657, 327);
+            btnThoat.Location = new Point(678, 275);
             btnThoat.Name = "btnThoat";
             btnThoat.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnThoat.Size = new Size(131, 56);
@@ -176,7 +177,7 @@
             guna2CheckBox1.CheckedState.BorderRadius = 0;
             guna2CheckBox1.CheckedState.BorderThickness = 0;
             guna2CheckBox1.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
-            guna2CheckBox1.Location = new Point(487, 287);
+            guna2CheckBox1.Location = new Point(518, 233);
             guna2CheckBox1.Name = "guna2CheckBox1";
             guna2CheckBox1.Size = new Size(148, 24);
             guna2CheckBox1.TabIndex = 8;
@@ -191,8 +192,8 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(800, 450);
+            BackgroundImageLayout = ImageLayout.None;
+            ClientSize = new Size(821, 349);
             Controls.Add(guna2CheckBox1);
             Controls.Add(btnThoat);
             Controls.Add(btnDangNhap);

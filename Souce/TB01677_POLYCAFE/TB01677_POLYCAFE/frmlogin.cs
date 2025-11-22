@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL_PolyCafe;
 using DTO_PolyCafe;
+using UTIL_Polycafe;
 
 namespace GUI_PolyCafe
 {
@@ -20,7 +21,7 @@ namespace GUI_PolyCafe
             InitializeComponent();
         }
 
-        
+
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
@@ -37,16 +38,21 @@ namespace GUI_PolyCafe
             }
             else
             {
-                if(nv.TrangThai == false)
+                if (nv.TrangThai == false)
                 {
                     MessageBox.Show(this, "tài khoản tạm khóa,vui lòng liên hệ với admin");
                     return;
                 }
-                //AuthUntil.user = nv;
+                AuthUtil.user = nv;
                 frmMain main = new frmMain();
                 main.Show();
                 this.Hide();
             }
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }

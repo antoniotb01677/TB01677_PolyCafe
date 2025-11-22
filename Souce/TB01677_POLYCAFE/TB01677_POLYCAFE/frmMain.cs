@@ -16,5 +16,11 @@ namespace GUI_PolyCafe
         {
             InitializeComponent();
         }
+
+        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DoiMatKhaucs reset = new DoiMatKhaucs();
+            reset.ShowDialog();
+        }
     }
 }

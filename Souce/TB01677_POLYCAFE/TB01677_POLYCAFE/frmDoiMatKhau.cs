@@ -12,9 +12,9 @@ using UTIL_Polycafe;
 
 namespace GUI_PolyCafe
 {
-    public partial class DoiMatKhaucs : Form
+    public partial class frmDoiMatKhau : Form
     {
-        public DoiMatKhaucs()
+        public frmDoiMatKhau()
         {
             InitializeComponent();
         }

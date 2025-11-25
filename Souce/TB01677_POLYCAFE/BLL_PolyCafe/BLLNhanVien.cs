@@ -32,6 +32,10 @@ namespace BLL_PolyCafe
             }
             catch (Exception ex) { return false; }
         }
+        public List<NhanVien> GetNhanVienList()
+        {
+            return dalNhanVien.selectAll();
+        }
     }
 
 }

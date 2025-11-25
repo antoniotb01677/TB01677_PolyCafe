@@ -1,6 +1,6 @@
 ﻿namespace GUI_PolyCafe
 {
-    partial class DoiMatKhaucs
+    partial class frmDoiMatKhau
     {
         /// <summary>
         /// Required designer variable.

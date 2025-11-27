@@ -164,7 +164,7 @@
             btnXoa.Size = new Size(155, 44);
             btnXoa.TabIndex = 14;
             btnXoa.Text = "Xóa";
-            btnXoa.Click += guna2Button3_Click;
+            btnXoa.Click += btnXoa_Click;
             // 
             // btnSua
             // 
@@ -181,6 +181,7 @@
             btnSua.Size = new Size(149, 44);
             btnSua.TabIndex = 13;
             btnSua.Text = "Sửa ";
+            btnSua.Click += btnSua_Click;
             // 
             // btnThem
             // 
@@ -197,6 +198,7 @@
             btnThem.Size = new Size(155, 44);
             btnThem.TabIndex = 12;
             btnThem.Text = "Thêm";
+            btnThem.Click += btnThem_Click;
             // 
             // guna2Panel2
             // 
@@ -244,7 +246,6 @@
             rdbHoatDong.UncheckedState.BorderThickness = 2;
             rdbHoatDong.UncheckedState.FillColor = Color.Transparent;
             rdbHoatDong.UncheckedState.InnerColor = Color.Transparent;
-            rdbHoatDong.CheckedChanged += guna2RadioButton3_CheckedChanged;
             // 
             // guna2Panel1
             // 
@@ -517,6 +518,7 @@
             dgvDanhSachNhanVien.ThemeStyle.RowsStyle.Height = 29;
             dgvDanhSachNhanVien.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvDanhSachNhanVien.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvDanhSachNhanVien.CellDoubleClick += dgvDanhSachNhanVien_CellDoubleClick;
             // 
             // panel1
             // 

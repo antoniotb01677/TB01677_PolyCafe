@@ -61,6 +61,89 @@ namespace DAL_PolyCafe
             String sql = "SELECT * FROM NhanVien";
             return SelectBySql(sql, new List<object>());
         }
+        //hàm tự động tạo mã nhân viên
+        public string generateMaNhanVien()
+        {
+            string prefix = "NV";
+            string sql = "SELECT MAX(MaNhanVien) FROM NhanVien";
+            List<object> thamSo = new List<object>();
+            object result = DBUtil.ScalarQuery(sql, thamSo);
+            if (result != null && result.ToString().StartsWith(prefix))
+            {
+                string maxCode = result.ToString().Substring(2);
+                int newNumber = int.Parse(maxCode) + 1;
+                return $"{prefix}{newNumber:D3}";
+            }
+
+            return $"{prefix}001";
+        }
+        //ham kiem tra emai hợp le
+        public bool checkEmailExists(string email)
+        {
+            string sql = "SELECT COUNT(*) FROM NhanVien WHERE Email = @0";
+            List<object> thamSo = new List<object>();
+            thamSo.Add(email);
+            object result = DBUtil.ScalarQuery(sql, thamSo);
+            return Convert.ToInt32(result) > 0;
+        }
+        public void ThemNhanVien(NhanVien nv)
+        {
+            try
+            {
+                string sql = @"INSERT INTO NhanVien (MaNhanVien, HoTen, Email, MatKhau, VaiTro, TrangThai) 
+           VALUES (@0, @1, @2, @3, @4, @5)";
+                List<object> thamSo = new List<object>();
+                thamSo.Add(nv.MaNhanVien);
+                thamSo.Add(nv.HoTen);
+                thamSo.Add(nv.Email);
+                thamSo.Add(nv.MatKhau);
+                thamSo.Add(nv.VaiTro);
+                thamSo.Add(nv.TrangThai);
+                DBUtil.Update(sql, thamSo);
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+        }
+        public void SuaNhanVien(NhanVien nv)
+        {
+            try
+            {
+                string sql = @"UPDATE NhanVien 
+           SET HoTen = @1, Email = @2, MatKhau = @3, VaiTro = @4, TrangThai = @5 
+           WHERE MaNhanVien = @0";
+                List<object> thamSo = new List<object>();
+                thamSo.Add(nv.MaNhanVien);
+                thamSo.Add(nv.HoTen);
+                thamSo.Add(nv.Email);
+                thamSo.Add(nv.MatKhau);
+                thamSo.Add(nv.VaiTro);
+                thamSo.Add(nv.TrangThai);
+                DBUtil.Update(sql, thamSo);
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+        }
+        public void XoaNhanVien(string maNv)
+        {
+            try
+            {
+                string sql = "DELETE FROM NhanVien WHERE MaNhanVien = @0";
+                List<object> thamSo = new List<object>();
+                thamSo.Add(maNv);
+                DBUtil.Update(sql, thamSo);
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+        }
     } 
 }
     

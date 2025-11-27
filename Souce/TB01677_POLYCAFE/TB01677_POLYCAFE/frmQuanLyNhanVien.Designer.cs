@@ -148,6 +148,7 @@
             btnLamMoi.Size = new Size(149, 44);
             btnLamMoi.TabIndex = 15;
             btnLamMoi.Text = "Làm Mới";
+            btnLamMoi.Click += btnLamMoi_Click;
             // 
             // btnXoa
             // 

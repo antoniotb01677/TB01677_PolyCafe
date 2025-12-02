@@ -38,7 +38,7 @@ namespace DAL_PolyCafe
             String sql = "SELECT * FROM TheLuuDong";
             return SelectBySql(sql, new List<object>());
         }
-        //hàm tự động tạo mã nhân viên
+        //hàm tự động tạo mã the
         public string generateMaThe()
         {
             string prefix = "THELUUDONG";

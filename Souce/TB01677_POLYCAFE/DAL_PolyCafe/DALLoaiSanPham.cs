@@ -9,20 +9,20 @@ using Microsoft.Data.SqlClient;
 
 namespace DAL_PolyCafe
 {
-    public class DALTheLuuDong
+    public class DALLoaiSanPham
     {
-        public List<TheLuuDong> SelectBySql(string sql, List<object> args, CommandType cmdType = CommandType.Text)
+        public List<LoaiSanPham> SelectBySql(string sql, List<object> args, CommandType cmdType = CommandType.Text) 
         {
-            List<TheLuuDong> list = new List<TheLuuDong>();
+            List<LoaiSanPham> list = new List<LoaiSanPham>();
             try
             {
                 SqlDataReader reader = DBUtil.Query(sql, args);
                 while (reader.Read())
                 {
-                    TheLuuDong entity = new TheLuuDong();
-                    entity.MaThe = reader.GetString("MaThe");
-                    entity.ChuSoHuu = reader.GetString("ChuSoHuu");
-                    entity.TrangThai = reader.GetBoolean("TrangThai");
+                    LoaiSanPham entity = new LoaiSanPham();
+                    entity.MaLoai = reader.GetString("MaLoai");
+                    entity.TenLoai = reader.GetString("TenLoai");
+                    entity.GhiChu = reader.GetString("GhiChu");
                     list.Add(entity);
                 }
             }
@@ -32,17 +32,16 @@ namespace DAL_PolyCafe
             }
             return list;
         }
-
-        public List<TheLuuDong> selectAll()
+        public List<LoaiSanPham> selectAll()
         {
-            String sql = "SELECT * FROM TheLuuDong";
+            String sql = "SELECT * FROM LoaiSanPham";
             return SelectBySql(sql, new List<object>());
         }
-        //hàm tự động tạo mã the
-        public string generateMaThe()
+        
+        public string generateMaLoai()
         {
-            string prefix = "THELUUDONG";
-            string sql = "SELECT MAX(MaThe) FROM TheLuuDong";
+            string prefix = "loaiSanPham";
+            string sql = "SELECT MAX(MaLoai) FROM LoaiSanPham";
             List<object> thamSo = new List<object>();
             object result = DBUtil.ScalarQuery(sql, thamSo);
             if (result != null && result.ToString().StartsWith(prefix))
@@ -54,17 +53,16 @@ namespace DAL_PolyCafe
 
             return $"{prefix}001";
         }
-       
-        public void ThemTheLuuDong(TheLuuDong theluudong)
+        public void ThemLoaiSanPham(LoaiSanPham loaiSanPham)
         {
             try
             {
-                string sql = @"INSERT INTO TheLuuDong (MaThe, ChuSoHuu, TrangThai) 
-           VALUES (@0, @1, @2, @3,)";
+                string sql = @"INSERT INTO loaiSanPham (MaLoai, TenLoai, GhiChu) 
+                             VALUES (@0, @1, @2, @3,)";
                 List<object> thamSo = new List<object>();
-                thamSo.Add(theluudong.MaThe);
-                thamSo.Add(theluudong.ChuSoHuu);
-                thamSo.Add(theluudong.TrangThai);
+                thamSo.Add(loaiSanPham.MaLoai);
+                thamSo.Add(loaiSanPham.TenLoai);
+                thamSo.Add(loaiSanPham.GhiChu);
                 DBUtil.Update(sql, thamSo);
             }
             catch (Exception e)
@@ -73,18 +71,18 @@ namespace DAL_PolyCafe
             }
 
         }
-        public void SuaTheLuuDong(TheLuuDong theluudong)
+        public void SuaLoaiSanPham(LoaiSanPham loaiSanPham)
         {
             try
             {
-                string sql = @"UPDATE TheLuuDong 
-           SET ChuSoHuu = @1, TrangThai = @2 
-           WHERE MaNhanVien = @0";
+                string sql = @"UPDATE LoaiSanPham 
+           SET TenLoai = @1, GhiChu = @2 
+           WHERE MaLoai = @0";
                 List<object> thamSo = new List<object>();
-                thamSo.Add(theluudong.MaThe);
-                thamSo.Add(theluudong.ChuSoHuu);
-                
-                thamSo.Add(theluudong.TrangThai);
+                thamSo.Add(loaiSanPham.MaLoai);
+                thamSo.Add(loaiSanPham.TenLoai);
+
+                thamSo.Add(loaiSanPham.GhiChu);
                 DBUtil.Update(sql, thamSo);
             }
             catch (Exception e)
@@ -93,13 +91,13 @@ namespace DAL_PolyCafe
             }
 
         }
-        public void XoaThe(string maThe)
+        public void XoaLoaiSanPham(string maLoai)
         {
             try
             {
-                string sql = "DELETE FROM TheLuuDong WHERE MaThe = @0";
+                string sql = "DELETE FROM LoaiSanPham WHERE MaLoai = @0";
                 List<object> thamSo = new List<object>();
-                thamSo.Add(maThe);
+                thamSo.Add(maLoai);
                 DBUtil.Update(sql, thamSo);
             }
             catch (Exception e)
@@ -108,6 +106,6 @@ namespace DAL_PolyCafe
             }
 
         }
+
     }
 }
-

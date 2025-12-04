@@ -52,10 +52,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             txtTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
             panel1 = new Panel();
             label8 = new Label();
@@ -68,7 +68,6 @@
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             rdbNgungBan = new Guna.UI2.WinForms.Guna2RadioButton();
             rdbHoatDong = new Guna.UI2.WinForms.Guna2RadioButton();
-            txtLoaiSanPham = new Guna.UI2.WinForms.Guna2TextBox();
             txtDonGia = new Guna.UI2.WinForms.Guna2TextBox();
             txtTenSanPham = new Guna.UI2.WinForms.Guna2TextBox();
             txtMaSanPham = new Guna.UI2.WinForms.Guna2TextBox();
@@ -78,6 +77,7 @@
             label3 = new Label();
             label2 = new Label();
             guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            cboLoaiSanPham = new Guna.UI2.WinForms.Guna2ComboBox();
             label1 = new Label();
             panel1.SuspendLayout();
             guna2GroupBox2.SuspendLayout();
@@ -236,6 +236,7 @@
             btnXoa.Size = new Size(155, 44);
             btnXoa.TabIndex = 14;
             btnXoa.Text = "Xóa";
+            btnXoa.Click += btnXoa_Click;
             // 
             // btnSua
             // 
@@ -252,6 +253,7 @@
             btnSua.Size = new Size(149, 44);
             btnSua.TabIndex = 13;
             btnSua.Text = "Sửa ";
+            btnSua.Click += btnSua_Click;
             // 
             // btnThem
             // 
@@ -317,30 +319,9 @@
             rdbHoatDong.UncheckedState.FillColor = Color.Transparent;
             rdbHoatDong.UncheckedState.InnerColor = Color.Transparent;
             // 
-            // txtLoaiSanPham
-            // 
-            txtLoaiSanPham.CustomizableEdges = customizableEdges15;
-            txtLoaiSanPham.DefaultText = "";
-            txtLoaiSanPham.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtLoaiSanPham.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtLoaiSanPham.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtLoaiSanPham.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtLoaiSanPham.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtLoaiSanPham.Font = new Font("Segoe UI", 9F);
-            txtLoaiSanPham.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtLoaiSanPham.Location = new Point(12, 253);
-            txtLoaiSanPham.Margin = new Padding(3, 4, 3, 4);
-            txtLoaiSanPham.Name = "txtLoaiSanPham";
-            txtLoaiSanPham.PasswordChar = '\0';
-            txtLoaiSanPham.PlaceholderText = "";
-            txtLoaiSanPham.SelectedText = "";
-            txtLoaiSanPham.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            txtLoaiSanPham.Size = new Size(329, 29);
-            txtLoaiSanPham.TabIndex = 9;
-            // 
             // txtDonGia
             // 
-            txtDonGia.CustomizableEdges = customizableEdges17;
+            txtDonGia.CustomizableEdges = customizableEdges15;
             txtDonGia.DefaultText = "";
             txtDonGia.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtDonGia.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -355,13 +336,13 @@
             txtDonGia.PasswordChar = '\0';
             txtDonGia.PlaceholderText = "";
             txtDonGia.SelectedText = "";
-            txtDonGia.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            txtDonGia.ShadowDecoration.CustomizableEdges = customizableEdges16;
             txtDonGia.Size = new Size(329, 29);
             txtDonGia.TabIndex = 8;
             // 
             // txtTenSanPham
             // 
-            txtTenSanPham.CustomizableEdges = customizableEdges19;
+            txtTenSanPham.CustomizableEdges = customizableEdges17;
             txtTenSanPham.DefaultText = "";
             txtTenSanPham.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtTenSanPham.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -376,13 +357,13 @@
             txtTenSanPham.PasswordChar = '\0';
             txtTenSanPham.PlaceholderText = "";
             txtTenSanPham.SelectedText = "";
-            txtTenSanPham.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            txtTenSanPham.ShadowDecoration.CustomizableEdges = customizableEdges18;
             txtTenSanPham.Size = new Size(329, 29);
             txtTenSanPham.TabIndex = 7;
             // 
             // txtMaSanPham
             // 
-            txtMaSanPham.CustomizableEdges = customizableEdges21;
+            txtMaSanPham.CustomizableEdges = customizableEdges19;
             txtMaSanPham.DefaultText = "";
             txtMaSanPham.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtMaSanPham.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -397,7 +378,7 @@
             txtMaSanPham.PasswordChar = '\0';
             txtMaSanPham.PlaceholderText = "";
             txtMaSanPham.SelectedText = "";
-            txtMaSanPham.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            txtMaSanPham.ShadowDecoration.CustomizableEdges = customizableEdges20;
             txtMaSanPham.Size = new Size(329, 29);
             txtMaSanPham.TabIndex = 6;
             // 
@@ -458,12 +439,12 @@
             // 
             // guna2GroupBox1
             // 
+            guna2GroupBox1.Controls.Add(cboLoaiSanPham);
             guna2GroupBox1.Controls.Add(btnLamMoi);
             guna2GroupBox1.Controls.Add(btnXoa);
             guna2GroupBox1.Controls.Add(btnSua);
             guna2GroupBox1.Controls.Add(btnThem);
             guna2GroupBox1.Controls.Add(guna2Panel2);
-            guna2GroupBox1.Controls.Add(txtLoaiSanPham);
             guna2GroupBox1.Controls.Add(txtDonGia);
             guna2GroupBox1.Controls.Add(txtTenSanPham);
             guna2GroupBox1.Controls.Add(txtMaSanPham);
@@ -482,6 +463,23 @@
             guna2GroupBox1.Size = new Size(360, 554);
             guna2GroupBox1.TabIndex = 4;
             guna2GroupBox1.Text = "Thông Tin Nhân Viên";
+            // 
+            // cboLoaiSanPham
+            // 
+            cboLoaiSanPham.BackColor = Color.Transparent;
+            cboLoaiSanPham.CustomizableEdges = customizableEdges21;
+            cboLoaiSanPham.DrawMode = DrawMode.OwnerDrawFixed;
+            cboLoaiSanPham.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboLoaiSanPham.FocusedColor = Color.FromArgb(94, 148, 255);
+            cboLoaiSanPham.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cboLoaiSanPham.Font = new Font("Segoe UI", 10F);
+            cboLoaiSanPham.ForeColor = Color.FromArgb(68, 88, 112);
+            cboLoaiSanPham.ItemHeight = 30;
+            cboLoaiSanPham.Location = new Point(12, 252);
+            cboLoaiSanPham.Name = "cboLoaiSanPham";
+            cboLoaiSanPham.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            cboLoaiSanPham.Size = new Size(329, 36);
+            cboLoaiSanPham.TabIndex = 16;
             // 
             // label1
             // 
@@ -529,7 +527,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2RadioButton rdbNgungBan;
         private Guna.UI2.WinForms.Guna2RadioButton rdbHoatDong;
-        private Guna.UI2.WinForms.Guna2TextBox txtLoaiSanPham;
         private Guna.UI2.WinForms.Guna2TextBox txtDonGia;
         private Guna.UI2.WinForms.Guna2TextBox txtTenSanPham;
         private Guna.UI2.WinForms.Guna2TextBox txtMaSanPham;
@@ -540,5 +537,6 @@
         private Label label2;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         private Label label1;
+        private Guna.UI2.WinForms.Guna2ComboBox cboLoaiSanPham;
     }
 }

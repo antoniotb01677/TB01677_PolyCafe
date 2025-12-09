@@ -126,7 +126,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -135,18 +135,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmMain.cs [Design]",
-              "DocumentMoniker": "D:\\SOF2052\\TB01677_PolyCafe\\Souce\\TB01677_POLYCAFE\\TB01677_POLYCAFE\\frmMain.cs",
-              "RelativeDocumentMoniker": "TB01677_POLYCAFE\\frmMain.cs",
-              "ToolTip": "D:\\SOF2052\\TB01677_PolyCafe\\Souce\\TB01677_POLYCAFE\\TB01677_POLYCAFE\\frmMain.cs [Design]",
-              "RelativeToolTip": "TB01677_POLYCAFE\\frmMain.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T03:57:40.391Z",
-              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -179,8 +167,8 @@
               "Title": "frmQuanLyNhanVien.cs [Design]",
               "DocumentMoniker": "D:\\SOF2052\\TB01677_PolyCafe\\Souce\\TB01677_POLYCAFE\\TB01677_POLYCAFE\\frmQuanLyNhanVien.cs",
               "RelativeDocumentMoniker": "TB01677_POLYCAFE\\frmQuanLyNhanVien.cs",
-              "ToolTip": "D:\\SOF2052\\TB01677_PolyCafe\\Souce\\TB01677_POLYCAFE\\TB01677_POLYCAFE\\frmQuanLyNhanVien.cs [Design]*",
-              "RelativeToolTip": "TB01677_POLYCAFE\\frmQuanLyNhanVien.cs [Design]*",
+              "ToolTip": "D:\\SOF2052\\TB01677_PolyCafe\\Souce\\TB01677_POLYCAFE\\TB01677_POLYCAFE\\frmQuanLyNhanVien.cs [Design]",
+              "RelativeToolTip": "TB01677_POLYCAFE\\frmQuanLyNhanVien.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-25T02:56:10.954Z",
               "EditorCaption": " [Design]"
@@ -191,12 +179,24 @@
               "Title": "frmQuanLyNhanVien.cs",
               "DocumentMoniker": "D:\\SOF2052\\TB01677_PolyCafe\\Souce\\TB01677_POLYCAFE\\TB01677_POLYCAFE\\frmQuanLyNhanVien.cs",
               "RelativeDocumentMoniker": "TB01677_POLYCAFE\\frmQuanLyNhanVien.cs",
-              "ToolTip": "D:\\SOF2052\\TB01677_PolyCafe\\Souce\\TB01677_POLYCAFE\\TB01677_POLYCAFE\\frmQuanLyNhanVien.cs*",
-              "RelativeToolTip": "TB01677_POLYCAFE\\frmQuanLyNhanVien.cs*",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAwBsAAAAdAAAAAAAAAA==",
+              "ToolTip": "D:\\SOF2052\\TB01677_PolyCafe\\Souce\\TB01677_POLYCAFE\\TB01677_POLYCAFE\\frmQuanLyNhanVien.cs",
+              "RelativeToolTip": "TB01677_POLYCAFE\\frmQuanLyNhanVien.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAwCQAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-25T03:34:03.078Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmMain.cs [Design]",
+              "DocumentMoniker": "D:\\SOF2052\\TB01677_PolyCafe\\Souce\\TB01677_POLYCAFE\\TB01677_POLYCAFE\\frmMain.cs",
+              "RelativeDocumentMoniker": "TB01677_POLYCAFE\\frmMain.cs",
+              "ToolTip": "D:\\SOF2052\\TB01677_PolyCafe\\Souce\\TB01677_POLYCAFE\\TB01677_POLYCAFE\\frmMain.cs [Design]",
+              "RelativeToolTip": "TB01677_POLYCAFE\\frmMain.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T03:57:40.391Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",

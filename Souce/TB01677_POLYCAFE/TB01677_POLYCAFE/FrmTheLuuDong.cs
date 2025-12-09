@@ -18,25 +18,20 @@ namespace GUI_PolyCafe
         {
             InitializeComponent();
         }
-        private void clearForm()
+        private void ClearForm()
         {
-            txtMaThe.Clear();
-            txtChuSoHuu.Clear();
-            rdbHoatDong.Checked = true;
             btnThem.Enabled = true;
             btnSua.Enabled = false;
             btnXoa.Enabled = true;
-            btnLamMoi.Enabled = true;
+            txtMaThe.Clear();
+            txtChuSoHuu.Clear();
+            rdbHoatDong.Checked = true;
         }
         private void LoadTheLuuDong()
         {
-            BLLTheLuuDong bLLTheLuuDong = new BLLTheLuuDong();
+            BLLTheLuuDong bllTheLuuDong = new BLLTheLuuDong();
             dgvDanhSachThe.DataSource = null;
-            dgvDanhSachThe.DataSource = bLLTheLuuDong.GetTheLuuDongList();
-            dgvDanhSachThe.Columns["MaThe"].HeaderText = "Mã Thẻ";
-            dgvDanhSachThe.Columns["ChuSoHuu"].HeaderText = "Chủ Sở Hữu";
-            dgvDanhSachThe.Columns["TrangThai"].Visible = false;
-            dgvDanhSachThe.Columns["TrangThaiText"].HeaderText = "Trạng Thái";
+            dgvDanhSachThe.DataSource = bllTheLuuDong.GetTheLuuDongList();
         }
 
         private void txtChuSoHuu_DoubleClick(object sender, EventArgs e)
@@ -49,30 +44,20 @@ namespace GUI_PolyCafe
             DataGridViewRow row = dgvDanhSachThe.Rows[e.RowIndex];
             // Đổ dữ liệu vào các ô nhập liệu trên form
             txtMaThe.Text = row.Cells["MaThe"].Value.ToString();
-            txtChuSoHuu.Text = row.Cells["HoTen"].Value.ToString();
-
+            txtChuSoHuu.Text = row.Cells["ChuSoHuu"].Value.ToString();
 
             bool trangThai = Convert.ToBoolean(row.Cells["TrangThai"].Value);
-            if (trangThai == false)
-            {
-                rdbHoatDong.Checked = true;
-            }
-            else
-            {
-                rdbHoatDong.Checked = true;
-            }
+            rdbHoatDong.Checked = trangThai;
 
-            // Bật nút "Sửa"
             btnThem.Enabled = false;
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
-            // Tắt chỉnh sửa mã nhân viên
             txtMaThe.Enabled = false;
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
-            clearForm();
+            ClearForm();
             LoadTheLuuDong();
         }
 
@@ -108,7 +93,7 @@ namespace GUI_PolyCafe
             if (string.IsNullOrEmpty(result))
             {
                 MessageBox.Show("Cập nhật thông tin thành công");
-                clearForm();
+                ClearForm();
                 LoadTheLuuDong();
             }
             else
@@ -149,7 +134,7 @@ namespace GUI_PolyCafe
             if (string.IsNullOrEmpty(result))
             {
                 MessageBox.Show("Cập nhật thông tin thành công");
-                clearForm();
+                ClearForm();
                 LoadTheLuuDong();
             }
             else
@@ -188,14 +173,14 @@ namespace GUI_PolyCafe
 
             if (result == DialogResult.Yes)
             {
-                BLLNhanVien bll = new BLLNhanVien();
-                string kq = bll.XoaNhanVien(maThe);
+                BLLTheLuuDong bLLTheLuuDong = new BLLTheLuuDong();
+                string kq = bLLTheLuuDong.XoaTheLuuDong(maThe);
 
                 if (string.IsNullOrEmpty(kq))
                 {
                     MessageBox.Show($"Xóa thông tin thẻ {maThe} - {name} thành công!", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    clearForm();
+                    ClearForm();
                     LoadTheLuuDong();
                 }
                 else

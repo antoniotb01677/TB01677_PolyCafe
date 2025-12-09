@@ -89,5 +89,15 @@ namespace GUI_PolyCafe.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap quan_cafe_view_dep_o_quang_ngai__6_ {
+            get {
+                object obj = ResourceManager.GetObject("quan-cafe-view-dep-o-quang-ngai (6)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

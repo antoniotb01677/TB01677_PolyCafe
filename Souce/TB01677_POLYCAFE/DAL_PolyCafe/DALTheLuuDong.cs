@@ -38,10 +38,10 @@ namespace DAL_PolyCafe
             String sql = "SELECT * FROM TheLuuDong";
             return SelectBySql(sql, new List<object>());
         }
-        //hàm tự động tạo mã the
-        public string generateMaThe()
+
+        public string generateMaTheLuuDong()
         {
-            string prefix = "THELUUDONG";
+            string prefix = "THE";
             string sql = "SELECT MAX(MaThe) FROM TheLuuDong";
             List<object> thamSo = new List<object>();
             object result = DBUtil.ScalarQuery(sql, thamSo);
@@ -54,46 +54,42 @@ namespace DAL_PolyCafe
 
             return $"{prefix}001";
         }
-       
-        public void ThemTheLuuDong(TheLuuDong theluudong)
+
+        public void ThemTheLuuDong(TheLuuDong the)
         {
             try
             {
                 string sql = @"INSERT INTO TheLuuDong (MaThe, ChuSoHuu, TrangThai) 
-           VALUES (@0, @1, @2, @3,)";
+                   VALUES (@0, @1, @2)";
                 List<object> thamSo = new List<object>();
-                thamSo.Add(theluudong.MaThe);
-                thamSo.Add(theluudong.ChuSoHuu);
-                thamSo.Add(theluudong.TrangThai);
+                thamSo.Add(the.MaThe);
+                thamSo.Add(the.ChuSoHuu);
+                thamSo.Add(the.TrangThai);
                 DBUtil.Update(sql, thamSo);
             }
             catch (Exception e)
             {
                 throw;
             }
-
         }
-        public void SuaTheLuuDong(TheLuuDong theluudong)
+
+        public void SuaTheLuuDong(TheLuuDong the)
         {
             try
             {
                 string sql = @"UPDATE TheLuuDong 
-           SET ChuSoHuu = @1, TrangThai = @2 
-           WHERE MaNhanVien = @0";
+                   SET ChuSoHuu = @1, TrangThai = @2
+                   WHERE MaThe = @0";
                 List<object> thamSo = new List<object>();
-                thamSo.Add(theluudong.MaThe);
-                thamSo.Add(theluudong.ChuSoHuu);
-                
-                thamSo.Add(theluudong.TrangThai);
+                thamSo.Add(the.MaThe);
+                thamSo.Add(the.ChuSoHuu);
+                thamSo.Add(the.TrangThai);
                 DBUtil.Update(sql, thamSo);
             }
-            catch (Exception e)
-            {
-                throw;
-            }
-
+            catch (Exception e) { throw; }
         }
-        public void XoaThe(string maThe)
+
+        public void XoaTheLuuDong(string maThe)
         {
             try
             {
@@ -106,7 +102,6 @@ namespace DAL_PolyCafe
             {
                 throw;
             }
-
         }
     }
 }

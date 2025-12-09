@@ -20,12 +20,12 @@ namespace BLL_PolyCafe
         {
             try
             {
-                the.MaThe= dalTheLuuDong.generateMaThe();
+                the.MaThe = dalTheLuuDong.generateMaTheLuuDong();
                 if (string.IsNullOrEmpty(the.MaThe))
                 {
-                    return "Mã thẻ không hợp lệ.";
+                    return "Mã thẻ lưu động không hợp lệ.";
                 }
-                
+
                 dalTheLuuDong.ThemTheLuuDong(the);
                 return string.Empty;
             }
@@ -35,16 +35,17 @@ namespace BLL_PolyCafe
                 return "Lỗi: " + ex.Message;
             }
         }
-        public string SuaTheLuuDong(TheLuuDong the)
+
+        public string SuaTheLuuDong(TheLuuDong nv)
         {
             try
             {
-                if (string.IsNullOrEmpty(the.MaThe))
+                if (string.IsNullOrEmpty(nv.MaThe))
                 {
-                    return "Mã thẻ không hợp lệ.";
+                    return "Mã thẻ lưu động không hợp lệ.";
                 }
 
-                dalTheLuuDong.SuaTheLuuDong(the);
+                dalTheLuuDong.SuaTheLuuDong(nv);
                 return string.Empty;
             }
             catch (Exception ex)
@@ -60,10 +61,10 @@ namespace BLL_PolyCafe
             {
                 if (string.IsNullOrEmpty(maThe))
                 {
-                    return "Mã thẻ không hợp lệ.";
+                    return "Mã thẻ lưu động không hợp lệ.";
                 }
 
-                dalTheLuuDong.XoaThe(maThe);
+                dalTheLuuDong.XoaTheLuuDong(maThe);
                 return string.Empty;
             }
             catch (Exception ex)

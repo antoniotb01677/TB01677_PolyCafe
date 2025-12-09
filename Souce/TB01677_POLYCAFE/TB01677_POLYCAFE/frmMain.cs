@@ -65,5 +65,10 @@ namespace GUI_PolyCafe
         {
             openChildForm(new FrmLoaiSanPham());
         }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

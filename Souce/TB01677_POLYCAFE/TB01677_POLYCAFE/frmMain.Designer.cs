@@ -106,14 +106,14 @@
             // loạiSảnPhẩmToolStripMenuItem
             // 
             loạiSảnPhẩmToolStripMenuItem.Name = "loạiSảnPhẩmToolStripMenuItem";
-            loạiSảnPhẩmToolStripMenuItem.Size = new Size(224, 26);
+            loạiSảnPhẩmToolStripMenuItem.Size = new Size(189, 26);
             loạiSảnPhẩmToolStripMenuItem.Text = "Loại Sản Phẩm";
             loạiSảnPhẩmToolStripMenuItem.Click += loạiSảnPhẩmToolStripMenuItem_Click;
             // 
             // sảnPhẩmToolStripMenuItem
             // 
             sảnPhẩmToolStripMenuItem.Name = "sảnPhẩmToolStripMenuItem";
-            sảnPhẩmToolStripMenuItem.Size = new Size(224, 26);
+            sảnPhẩmToolStripMenuItem.Size = new Size(189, 26);
             sảnPhẩmToolStripMenuItem.Text = "Sản phẩm";
             sảnPhẩmToolStripMenuItem.Click += sảnPhẩmToolStripMenuItem_Click;
             // 
@@ -157,12 +157,14 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.quan_cafe_view_dep_o_quang_ngai__6_;
             ClientSize = new Size(971, 585);
             Controls.Add(pnMain);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "frmMain";
             Text = "frmMain";
+            Load += frmMain_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);

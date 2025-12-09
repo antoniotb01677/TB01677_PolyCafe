@@ -28,15 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmlogin));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             txtTaiKhoan = new Guna.UI2.WinForms.Guna2TextBox();
@@ -77,7 +76,7 @@
             // 
             // txtTaiKhoan
             // 
-            txtTaiKhoan.CustomizableEdges = customizableEdges1;
+            txtTaiKhoan.CustomizableEdges = customizableEdges9;
             txtTaiKhoan.DefaultText = "";
             txtTaiKhoan.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtTaiKhoan.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -92,7 +91,7 @@
             txtTaiKhoan.PasswordChar = '\0';
             txtTaiKhoan.PlaceholderText = "";
             txtTaiKhoan.SelectedText = "";
-            txtTaiKhoan.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            txtTaiKhoan.ShadowDecoration.CustomizableEdges = customizableEdges10;
             txtTaiKhoan.Size = new Size(271, 48);
             txtTaiKhoan.TabIndex = 2;
             // 
@@ -116,7 +115,7 @@
             // 
             // txtMatKhau
             // 
-            txtMatKhau.CustomizableEdges = customizableEdges3;
+            txtMatKhau.CustomizableEdges = customizableEdges11;
             txtMatKhau.DefaultText = "";
             txtMatKhau.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtMatKhau.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -125,19 +124,19 @@
             txtMatKhau.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtMatKhau.Font = new Font("Segoe UI", 9F);
             txtMatKhau.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtMatKhau.Location = new Point(518, 178);
+            txtMatKhau.Location = new Point(523, 178);
             txtMatKhau.Margin = new Padding(3, 4, 3, 4);
             txtMatKhau.Name = "txtMatKhau";
             txtMatKhau.PasswordChar = '\0';
             txtMatKhau.PlaceholderText = "";
             txtMatKhau.SelectedText = "";
-            txtMatKhau.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            txtMatKhau.ShadowDecoration.CustomizableEdges = customizableEdges12;
             txtMatKhau.Size = new Size(270, 48);
             txtMatKhau.TabIndex = 5;
             // 
             // btnDangNhap
             // 
-            btnDangNhap.CustomizableEdges = customizableEdges5;
+            btnDangNhap.CustomizableEdges = customizableEdges13;
             btnDangNhap.DisabledState.BorderColor = Color.DarkGray;
             btnDangNhap.DisabledState.CustomBorderColor = Color.DarkGray;
             btnDangNhap.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -147,7 +146,7 @@
             btnDangNhap.ForeColor = Color.White;
             btnDangNhap.Location = new Point(523, 275);
             btnDangNhap.Name = "btnDangNhap";
-            btnDangNhap.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnDangNhap.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btnDangNhap.Size = new Size(128, 56);
             btnDangNhap.TabIndex = 6;
             btnDangNhap.Text = "Đăng nhập";
@@ -155,7 +154,7 @@
             // 
             // btnThoat
             // 
-            btnThoat.CustomizableEdges = customizableEdges7;
+            btnThoat.CustomizableEdges = customizableEdges15;
             btnThoat.DisabledState.BorderColor = Color.DarkGray;
             btnThoat.DisabledState.CustomBorderColor = Color.DarkGray;
             btnThoat.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -165,7 +164,7 @@
             btnThoat.ForeColor = Color.White;
             btnThoat.Location = new Point(678, 275);
             btnThoat.Name = "btnThoat";
-            btnThoat.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnThoat.ShadowDecoration.CustomizableEdges = customizableEdges16;
             btnThoat.Size = new Size(131, 56);
             btnThoat.TabIndex = 7;
             btnThoat.Text = "Thoát";
@@ -191,9 +190,10 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackColor = Color.WhiteSmoke;
+            BackgroundImage = Properties.Resources.anhcafemeo;
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(821, 349);
+            ClientSize = new Size(842, 352);
             Controls.Add(guna2CheckBox1);
             Controls.Add(btnThoat);
             Controls.Add(btnDangNhap);
@@ -204,6 +204,7 @@
             Controls.Add(label1);
             Name = "frmlogin";
             Text = "frmlogin";
+            Load += frmlogin_Load;
             ResumeLayout(false);
             PerformLayout();
         }

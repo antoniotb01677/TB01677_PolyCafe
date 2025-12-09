@@ -63,6 +63,16 @@ namespace GUI_PolyCafe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap anhcafemeo {
+            get {
+                object obj = ResourceManager.GetObject("anhcafemeo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hinh_anh_mau_thiet_ke_quan_cafe {
             get {
                 object obj = ResourceManager.GetObject("hinh-anh-mau-thiet-ke-quan-cafe", resourceCulture);

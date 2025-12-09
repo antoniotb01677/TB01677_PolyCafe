@@ -53,7 +53,17 @@ namespace GUI_PolyCafe
 
         private void thẻLưuĐộngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmDoiMatKhau());
+            openChildForm(new FrmTheLuuDong());
+        }
+
+        private void sảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmSanPham());
+        }
+
+        private void loạiSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FrmLoaiSanPham());
         }
     }
 }

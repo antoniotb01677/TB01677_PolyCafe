@@ -106,14 +106,16 @@
             // loạiSảnPhẩmToolStripMenuItem
             // 
             loạiSảnPhẩmToolStripMenuItem.Name = "loạiSảnPhẩmToolStripMenuItem";
-            loạiSảnPhẩmToolStripMenuItem.Size = new Size(189, 26);
+            loạiSảnPhẩmToolStripMenuItem.Size = new Size(224, 26);
             loạiSảnPhẩmToolStripMenuItem.Text = "Loại Sản Phẩm";
+            loạiSảnPhẩmToolStripMenuItem.Click += loạiSảnPhẩmToolStripMenuItem_Click;
             // 
             // sảnPhẩmToolStripMenuItem
             // 
             sảnPhẩmToolStripMenuItem.Name = "sảnPhẩmToolStripMenuItem";
-            sảnPhẩmToolStripMenuItem.Size = new Size(189, 26);
+            sảnPhẩmToolStripMenuItem.Size = new Size(224, 26);
             sảnPhẩmToolStripMenuItem.Text = "Sản phẩm";
+            sảnPhẩmToolStripMenuItem.Click += sảnPhẩmToolStripMenuItem_Click;
             // 
             // bánHàngToolStripMenuItem
             // 

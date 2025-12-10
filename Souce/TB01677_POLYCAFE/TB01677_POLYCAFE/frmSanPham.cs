@@ -26,27 +26,21 @@ namespace GUI_PolyCafe
             txtMaSanPham.Clear();
             txtTenSanPham.Clear();
             txtDonGia.Clear();
-
             rdbHoatDong.Checked = true;
         }
         private void LoadDanhSachSanPham()
         {
-            BLLSanPham bLLSanPham = new BLLSanPham();
+            BLLSanPham bllSanPham = new BLLSanPham();
             dgvDanhSachSanPham.DataSource = null;
-            dgvDanhSachSanPham.DataSource = bLLSanPham.GetSanPhamlist();
-            dgvDanhSachSanPham.Columns["MaSanPham"].HeaderText = "Mã Sản Phẩm";
-            dgvDanhSachSanPham.Columns["TenSanPham"].HeaderText = "Tên Sản Phẩm";
-            dgvDanhSachSanPham.Columns["TrangThai"].Visible = false;
-            dgvDanhSachSanPham.Columns["TrangThaiText"].HeaderText = "Trạng Thái";
-            dgvDanhSachSanPham.Columns["DonGia"].HeaderText = "Đơn Giá";
-            dgvDanhSachSanPham.Columns["MaLoai"].HeaderText = "Loại Sản Phẩm";
+            List<SanPham> lstSP = bllSanPham.GetSanPhamlist();
+            dgvDanhSachSanPham.DataSource = lstSP;
         }
         private void LoadLoaiSanPham()
         {
             try
             {
-                BLLLoaiSanPham bUSLoaiSanPham = new BLLLoaiSanPham();
-                List<LoaiSanPham> dsLoai = bUSLoaiSanPham.GetLoaiSanPhamlist();
+                BLLLoaiSanPham bllLoaiSanPham = new BLLLoaiSanPham();
+                List<LoaiSanPham> dsLoai = bllLoaiSanPham.GetLoaiSanPhamlist();
                 cboLoaiSanPham.DataSource = dsLoai;
                 cboLoaiSanPham.ValueMember = "MaLoai";
                 cboLoaiSanPham.DisplayMember = "TenLoai";
@@ -97,37 +91,50 @@ namespace GUI_PolyCafe
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            string tenSP = txtTenSanPham.Text.Trim();
-
-            string Dongia = txtDonGia.Text.Trim();
-            string Maloai = cboLoaiSanPham.SelectedValue?.ToString();
-            bool trangThai = rdbHoatDong.Checked;
-
-            // Kiểm tra dữ liệu nhập vào
-            if (string.IsNullOrEmpty(tenSP) || string.IsNullOrEmpty(Dongia) || string.IsNullOrEmpty(Maloai))
+            try
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            SanPham sp = new SanPham
-            {
-                TenSanPham = tenSP,
-                DonGia = decimal.Parse(Dongia),
-                MaLoai = Maloai,
-                TrangThai = trangThai,
-            };
-            BLLSanPham bll = new BLLSanPham();
-            string result = bll.SuaSanPham(sp);
+                string tenSP = txtTenSanPham.Text.Trim();
+                string donGiaText = txtDonGia.Text.Trim();
+                string maLoai = cboLoaiSanPham.SelectedValue?.ToString();
+                bool trangThai = rdbHoatDong.Checked;
 
-            if (string.IsNullOrEmpty(result))
-            {
-                MessageBox.Show("Cập nhật thông tin thành công");
+                // Kiểm tra dữ liệu nhập vào
+                if (string.IsNullOrEmpty(tenSP) || string.IsNullOrEmpty(donGiaText) || string.IsNullOrEmpty(maLoai))
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Chuyển đổi đơn giá
+                if (!decimal.TryParse(donGiaText, out decimal donGia))
+                {
+                    MessageBox.Show("Đơn giá không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Tạo đối tượng sản phẩm
+                SanPham sp = new SanPham
+                {
+                    TenSanPham = tenSP,
+                    DonGia = donGia,
+                    MaLoai = maLoai,
+                    TrangThai = trangThai,
+                   
+                };
+
+                // Thêm sản phẩm vào cơ sở dữ liệu
+                BLLSanPham bllSanPham = new BLLSanPham();
+                bllSanPham.ThemSanPham(sp);
+
+                MessageBox.Show("Thêm sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Làm mới form sau khi thêm
                 clearForm();
                 LoadDanhSachSanPham();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show(result);
+                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -136,26 +143,31 @@ namespace GUI_PolyCafe
             try
             {
                 string tenSP = txtTenSanPham.Text.Trim();
-                string donGia = txtDonGia.Text.Trim();
+                string donGiaText = txtDonGia.Text.Trim();
                 string maLoai = cboLoaiSanPham.SelectedValue?.ToString();
                 bool trangThai = rdbHoatDong.Checked;
                 string maSP = txtMaSanPham.Text.Trim();
 
                 // Kiểm tra dữ liệu nhập vào
-                if (string.IsNullOrEmpty(tenSP) || string.IsNullOrEmpty(donGia) || string.IsNullOrEmpty(maLoai))
+                if (string.IsNullOrEmpty(tenSP) || string.IsNullOrEmpty(donGiaText) || string.IsNullOrEmpty(maLoai))
                 {
                     MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
+                // Chuyển đổi đơn giá
+                if (!decimal.TryParse(donGiaText, out decimal donGia))
+                {
+                    MessageBox.Show("Đơn giá không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
-
-
+                // Tạo đối tượng sản phẩm
                 SanPham sp = new SanPham
                 {
                     MaSanPham = maSP,
                     TenSanPham = tenSP,
-                    DonGia = decimal.Parse(donGia),
+                    DonGia = donGia,
                     MaLoai = maLoai,
                     TrangThai = trangThai,
                 };
@@ -185,7 +197,6 @@ namespace GUI_PolyCafe
         {
             string maSP = txtMaSanPham.Text.Trim();
             string tenSP = string.Empty;
-            
 
             if (string.IsNullOrEmpty(maSP))
             {
@@ -194,7 +205,7 @@ namespace GUI_PolyCafe
                     DataGridViewRow selectedRow = dgvDanhSachSanPham.SelectedRows[0];
                     maSP = selectedRow.Cells["MaSanPham"].Value.ToString();
                     tenSP = selectedRow.Cells["TenSanPham"].Value.ToString();
-                    
+                   
                 }
                 else
                 {

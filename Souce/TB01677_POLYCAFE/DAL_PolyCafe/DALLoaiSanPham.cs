@@ -37,10 +37,10 @@ namespace DAL_PolyCafe
             String sql = "SELECT * FROM LoaiSanPham";
             return SelectBySql(sql, new List<object>());
         }
-        
-        public string generateMaLoai()
+
+        public string generateMaLoaiSanPham()
         {
-            string prefix = "loaiSanPham";
+            string prefix = "LSP";
             string sql = "SELECT MAX(MaLoai) FROM LoaiSanPham";
             List<object> thamSo = new List<object>();
             object result = DBUtil.ScalarQuery(sql, thamSo);
@@ -53,44 +53,41 @@ namespace DAL_PolyCafe
 
             return $"{prefix}001";
         }
-        public void ThemLoaiSanPham(LoaiSanPham loaiSanPham)
+
+        public void ThemLoaiSanPham(LoaiSanPham loaiSP)
         {
             try
             {
-                string sql = @"INSERT INTO loaiSanPham (MaLoai, TenLoai, GhiChu) 
-                             VALUES (@0, @1, @2, @3,)";
+                string sql = @"INSERT INTO LoaiSanPham (MaLoai, TenLoai, GhiChu) 
+                   VALUES (@0, @1, @2)";
                 List<object> thamSo = new List<object>();
-                thamSo.Add(loaiSanPham.MaLoai);
-                thamSo.Add(loaiSanPham.TenLoai);
-                thamSo.Add(loaiSanPham.GhiChu);
+                thamSo.Add(loaiSP.MaLoai);
+                thamSo.Add(loaiSP.TenLoai);
+                thamSo.Add(loaiSP.GhiChu);
                 DBUtil.Update(sql, thamSo);
             }
             catch (Exception e)
             {
                 throw;
             }
-
         }
-        public void SuaLoaiSanPham(LoaiSanPham loaiSanPham)
+
+        public void SuaLoaiSanPham(LoaiSanPham loaiSP)
         {
             try
             {
                 string sql = @"UPDATE LoaiSanPham 
-           SET TenLoai = @1, GhiChu = @2 
-           WHERE MaLoai = @0";
+                   SET TenLoai = @1, GhiChu = @2
+                   WHERE MaLoai = @0";
                 List<object> thamSo = new List<object>();
-                thamSo.Add(loaiSanPham.MaLoai);
-                thamSo.Add(loaiSanPham.TenLoai);
-
-                thamSo.Add(loaiSanPham.GhiChu);
+                thamSo.Add(loaiSP.MaLoai);
+                thamSo.Add(loaiSP.TenLoai);
+                thamSo.Add(loaiSP.GhiChu);
                 DBUtil.Update(sql, thamSo);
             }
-            catch (Exception e)
-            {
-                throw;
-            }
-
+            catch (Exception e) { throw; }
         }
+
         public void XoaLoaiSanPham(string maLoai)
         {
             try
@@ -104,7 +101,6 @@ namespace DAL_PolyCafe
             {
                 throw;
             }
-
         }
 
     }

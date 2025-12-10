@@ -19,7 +19,7 @@ namespace BLL_PolyCafe
         {
             try
             {
-                loaiSP.MaLoai = dalLoaiSanPham.generateMaLoai();
+                loaiSP.MaLoai = dalLoaiSanPham.generateMaLoaiSanPham();
                 if (string.IsNullOrEmpty(loaiSP.MaLoai))
                 {
                     return "Mã loại sản phẩm không hợp lệ.";
@@ -54,16 +54,16 @@ namespace BLL_PolyCafe
             }
         }
 
-        public string XoaLoaiSanPham(string maloai)
+        public string XoaLoaiSanPham(string maloaiSP)
         {
             try
             {
-                if (string.IsNullOrEmpty(maloai))
+                if (string.IsNullOrEmpty(maloaiSP))
                 {
                     return "Mã loại sản phẩm không hợp lệ.";
                 }
 
-                dalLoaiSanPham.XoaLoaiSanPham(maloai);
+                dalLoaiSanPham.XoaLoaiSanPham(maloaiSP);
                 return string.Empty;
             }
             catch (Exception ex)

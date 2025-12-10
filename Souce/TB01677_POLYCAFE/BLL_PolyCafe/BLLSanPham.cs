@@ -32,6 +32,7 @@ namespace BLL_PolyCafe
                 return "Lỗi: " + ex.Message;
             }
         }
+
         public string SuaSanPham(SanPham sp)
         {
             try
@@ -40,6 +41,8 @@ namespace BLL_PolyCafe
                 {
                     return "Mã sản phẩm không hợp lệ.";
                 }
+
+                
 
                 dalSanPham.SuaSanPham(sp);
                 return string.Empty;
@@ -50,16 +53,17 @@ namespace BLL_PolyCafe
                 return "Lỗi: " + ex.Message;
             }
         }
-        public string XoaSanPham(string maSanPham)
+
+        public string XoaSanPham(string maSP)
         {
             try
             {
-                if (string.IsNullOrEmpty(maSanPham))
+                if (string.IsNullOrEmpty(maSP))
                 {
-                    return "Mã thẻ không hợp lệ.";
+                    return "Mã sản phẩm không hợp lệ.";
                 }
 
-                dalSanPham.XoaSanPham(maSanPham);
+                dalSanPham.XoaSanPham(maSP);
                 return string.Empty;
             }
             catch (Exception ex)

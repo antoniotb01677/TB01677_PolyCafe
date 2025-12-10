@@ -84,17 +84,18 @@ namespace GUI_PolyCafe
 
             if (string.IsNullOrEmpty(tenLoai))
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin loại sản phẩm.");
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin thẻ lưu động.");
                 return;
             }
-            LoaiSanPham loaiSanPham = new LoaiSanPham
+
+            LoaiSanPham loai = new LoaiSanPham
             {
                 MaLoai = maLoai,
                 TenLoai = tenLoai,
                 GhiChu = ghiChu
             };
             BLLLoaiSanPham bll = new BLLLoaiSanPham();
-            string result = bll.SuaLoaiSanPham(loaiSanPham);
+            string result = bll.SuaLoaiSanPham(loai);
 
             if (string.IsNullOrEmpty(result))
             {
@@ -140,8 +141,8 @@ namespace GUI_PolyCafe
 
             if (result == DialogResult.Yes)
             {
-                BLLLoaiSanPham bll = new BLLLoaiSanPham();
-                string kq = bll.XoaLoaiSanPham(maLoai);
+                BLLLoaiSanPham bus = new BLLLoaiSanPham();
+                string kq = bus.XoaLoaiSanPham(maLoai);
 
                 if (string.IsNullOrEmpty(kq))
                 {
@@ -178,6 +179,11 @@ namespace GUI_PolyCafe
         {
             ClearForm();
             LoadDanhSachLoaiSanPham();
+        }
+        private void frmLoaiSanPham_Resize(object sender, EventArgs e)
+        {
+            label1.Left = (this.ClientSize.Width - label1.Width) / 2;
+            label1.Top = 10;
         }
     }
 }
